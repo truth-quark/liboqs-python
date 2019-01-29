@@ -19,4 +19,4 @@ script:
   - bash .build_liboqs.sh
   - ls -l /home/travis
   - ls -l /home/travis/build
-  - pytest
+  - py.test
