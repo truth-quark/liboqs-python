@@ -12,4 +12,6 @@ env:
 # command to run tests
 script:
   - bash .build_liboqs.sh
+  - ls -l /home/travis
+  - ls -l /home/travis/build
   - pytest
