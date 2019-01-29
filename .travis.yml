@@ -3,7 +3,7 @@ language:
   - python
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y autoconf automake libtool gcc libssl-dev unzip xsltproc python3-pytest python-pytest
+  - sudo apt-get install -y autoconf automake libtool gcc libssl-dev unzip xsltproc python3-pytest
 python:
   - "2.7"
 #  - "3.5"
@@ -19,4 +19,4 @@ script:
   - bash .build_liboqs.sh
   - ls -l /home/travis
   - ls -l /home/travis/build
-  - py.test
+  - py.test-3
