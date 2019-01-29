@@ -23,15 +23,21 @@ def _load_shared_obj():
 
     # try custom env var first
     if LIBOQS_INSTALL_PATH in os.environ:
+        print('Found LIBOQS_INSTALL_PATH={}'.format(os.environ[LIBOQS_INSTALL_PATH]))
         paths.append(os.environ[LIBOQS_INSTALL_PATH])
+        paths.append(os.environ['HOME'])
+    else:
+        print('WARN: LIBOQS_INSTALL_PATH not found in env vars...')
 
     # search typical locations too
-    paths += [ctu.find_library('oqs'), os.path.join(os.curdir, LIBOQS_SHARED_OBJ)]
+    paths += [ctu.find_library('oqs'), os.path.join(os.curdir,
+                                       LIBOQS_SHARED_OBJ)]
     dll = ct.windll if platform.system() == 'Windows' else ct.cdll
 
     for path in paths:
         if path and os.path.exists(path):
             lib = dll.LoadLibrary(path)
+            print('Found {}'.format(path))
             return lib
 
     raise RuntimeError('No liboqs.so found!')
