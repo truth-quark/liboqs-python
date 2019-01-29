@@ -35,6 +35,7 @@ def _load_shared_obj():
     dll = ct.windll if platform.system() == 'Windows' else ct.cdll
 
     for path in paths:
+        print('Trying {}'.format(path))
         if path and os.path.exists(path):
             lib = dll.LoadLibrary(path)
             print('Found {}'.format(path))
