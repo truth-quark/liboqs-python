@@ -107,5 +107,5 @@ echo -n "    liboqs-nist (${LIBOQS_NIST_BRANCH_REPO} ${LIBOQS_NIST_BRANCH_BRANCH
 cd "${BASEDIR}/liboqs-nist"
 git log | head -n 1
 
-#ln -s "${BASEDIR}/liboqs-nist/liboqs.so" ~/liboqs.so
-export LIBOQS_INSTALL_PATH="${BASEDIR}/liboqs-nist/liboqs.so"
+ln -s "${BASEDIR}/liboqs-nist/liboqs.so" ~/liboqs.so
+#export LIBOQS_INSTALL_PATH="${BASEDIR}/liboqs-nist/liboqs.so"
